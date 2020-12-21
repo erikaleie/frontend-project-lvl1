@@ -6,7 +6,7 @@ console.log('Welcome to the Brain Games!');
 const userName = readlineSync.question('May I have your name? ');
 console.log(`Hello, ${userName}!`);
 
-console.log('What is the result of the expression?');
+console.log('Find the greatest common divisor of given numbers.');
 
 const n = 3;
 let check = false;
@@ -14,29 +14,19 @@ let i = 0;
 
 while (check === false) {
   const a = Math.floor(Math.random() * 101);
-  const b = Math.floor(Math.random() * 10);
+  const b = Math.floor(Math.random() * 101);
 
-  const o = ['-', '+', '*'];
-  const oper = o[Math.floor(Math.random() * 3)];
-
-  console.log(`Question: ${a} ${oper} ${b}`);
+  console.log(`Question: ${a} ${b}`);
   const answer = readlineSync.question('Your answer: ');
 
-  let res;
+  let res; 
+  let j = 1;
 
-  switch (oper) {
-    case '-':
-      res = a - b;
-      break;
-    case '+':
-      res = a + b;
-      break;
-    case '*':
-      res = a * b;
-      break;
-      // no default
-  }
-
+  while (a % j === 0 && b % j === 0) {
+      res = j;
+      j += 1;        
+  }  
+  
   if (res === Number(answer)) {
     i += 1;
     console.log('Correct!');
