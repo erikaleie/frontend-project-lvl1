@@ -10,7 +10,7 @@ const genQuestionAndAnswer = () => {
 
   // Проверка числа на простоту
   for (let j = 2; j < question; j += 1) {
-    if (question % j  === 0 || question === 1) {
+    if (question % j === 0 || question === 1) {
       rightAnswer = 'no';
     }
   }

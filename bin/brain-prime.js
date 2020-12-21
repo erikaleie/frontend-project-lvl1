@@ -21,7 +21,7 @@ while (check === false) {
 
   // Проверка числа на простоту
   for (let j = 2; j < num; j += 1) {
-    if (num % j  === 0 || num === 1) {
+    if (num % j === 0 || num === 1) {
       res = 'no';
     }
 
