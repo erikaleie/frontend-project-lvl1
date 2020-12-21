@@ -41,12 +41,12 @@ while (check === false) {
     i += 1;
     console.log('Correct!');
   } else {
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was ${res}.\nLet's try again, ${userName}`);
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was ${res}.\nLet's try again, ${userName}!`);
     break;
   }
 
   if (i === n) {
     check = true;
-    console.log(`Congratulations, ${userName}`);
+    console.log(`Congratulations, ${userName}!`);
   }
 }

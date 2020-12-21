@@ -19,24 +19,24 @@ while (check === false) {
   console.log(`Question: ${a} ${b}`);
   const answer = readlineSync.question('Your answer: ');
 
-  let res; 
+  let res;
   let j = 1;
 
   while (a % j === 0 && b % j === 0) {
-      res = j;
-      j += 1;        
-  }  
-  
+    res = j;
+    j += 1;
+  }
+
   if (res === Number(answer)) {
     i += 1;
     console.log('Correct!');
   } else {
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was ${res}.\nLet's try again, ${userName}`);
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was ${res}.\nLet's try again, ${userName}!`);
     break;
   }
 
   if (i === n) {
     check = true;
-    console.log(`Congratulations, ${userName}`);
+    console.log(`Congratulations, ${userName}!`);
   }
 }

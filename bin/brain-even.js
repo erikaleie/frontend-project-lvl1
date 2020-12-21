@@ -21,15 +21,15 @@ while (check === false) {
     i += 1;
     console.log('Correct!');
   } else if (randomNumber % 2 === 0 && answer !== 'yes') {
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was 'yes'.\nLet's try again, ${userName}`);
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was 'yes'.\nLet's try again, ${userName}!`);
     break;
   } else if (randomNumber % 2 !== 0 && answer !== 'no') {
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${userName}`);
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${userName}!`);
     break;
   }
 
   if (i === n) {
     check = true;
-    console.log(`Congratulations, ${userName}`);
+    console.log(`Congratulations, ${userName}!`);
   }
 }
