@@ -20,22 +20,24 @@ while (check === false) {
   let res = 'yes';
 
   // Проверка числа на простоту
+  if (num === 1) {
+    res = 'no';
+  }
   for (let j = 2; j < num; j += 1) {
-    if (num % j === 0 || num === 1) {
+    if (num % j === 0) {
       res = 'no';
     }
+  }
+  if (res === answer) {
+    i += 1;
+    console.log('Correct!');
+  } else {
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${res}'.\nLet's try again, ${userName}!`);
+    break;
+  }
 
-    if (res === answer) {
-      i += 1;
-      console.log('Correct!');
-    } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${res}'.\nLet's try again, ${userName}!`);
-      break;
-    }
-
-    if (i === n) {
-      check = true;
-      console.log(`Congratulations, ${userName}!`);
-    }
+  if (i === n) {
+    check = true;
+    console.log(`Congratulations, ${userName}!`);
   }
 }
