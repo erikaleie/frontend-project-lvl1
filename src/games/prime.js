@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 import runGame from '../../index.js';
 
 const brainPrime = () => {
