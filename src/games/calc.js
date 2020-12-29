@@ -1,11 +1,12 @@
-import runGame from '../../index.js';
+import runGame from '../index.js';
+import genNumber from '../utils.js';
 
 const brainCalc = () => {
   const task = 'What is the result of the expression?';
-  const genQuestionAndAnswer = () => {
-    const a = Math.floor(Math.random() * 101);
-    const b = Math.floor(Math.random() * 10);
 
+  const genQuestionAndAnswer = () => {
+    const a = genNumber;
+    const b = Math.floor(Math.random() * 11);
     const o = ['-', '+', '*'];
     const oper = o[Math.floor(Math.random() * 3)];
 
@@ -26,7 +27,8 @@ const brainCalc = () => {
         res = a * b;
         break;
 
-      // no default
+      default:
+        break;
     }
 
     const rightAnswer = String(res);

@@ -1,14 +1,14 @@
-import runGame from '../../index.js';
+import runGame from '../index.js';
+import genNumber from '../utils.js';
 
 const brainGcd = () => {
   const task = 'Find the greatest common divisor of given numbers.';
 
   const genQuestionAndAnswer = () => {
-    const a = Math.floor(Math.random() * 101);
-    const b = Math.floor(Math.random() * 101);
+    const a = genNumber;
+    const b = genNumber;
     const question = `${a} ${b}`;
     let res;
-
     let y = a;
     let x = b;
 

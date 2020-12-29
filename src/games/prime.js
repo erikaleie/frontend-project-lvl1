@@ -1,11 +1,11 @@
-import runGame from '../../index.js';
+import runGame from '../index.js';
+import genNumber from '../utils.js';
 
 const brainPrime = () => {
   const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
   const genQuestionAndAnswer = () => {
-    const question = Math.floor(Math.random() * 101);
-
+    const question = genNumber;
     let rightAnswer = 'yes';
 
     // Проверка числа на простоту

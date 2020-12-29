@@ -8,11 +8,10 @@ const runGame = (task, genQuestionAndAnswer) => {
 
   console.log(task);
 
-  const n = 3;
-  let check = false;
+  const roundCount = 3;
   let i = 0;
 
-  while (check === false) {
+  while (i < roundCount) {
     const [question, rightAnswer] = genQuestionAndAnswer();
     console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
@@ -21,14 +20,10 @@ const runGame = (task, genQuestionAndAnswer) => {
       console.log('Correct!');
     } else {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.\nLet's try again, ${userName}!`);
-      break;
-    }
-
-    if (i === n) {
-      check = true;
-      console.log(`Congratulations, ${userName}!`);
+      return;
     }
   }
+  console.log(`Congratulations, ${userName}!`);
 };
 
 export default runGame;
