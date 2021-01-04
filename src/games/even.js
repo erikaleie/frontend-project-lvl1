@@ -1,16 +1,12 @@
 import runGame from '../index.js';
-import genNumber from '../utils.js';
+import genRandomNumber from '../utils.js';
 
-const brainEven = () => {
-  const task = 'Answer "yes" if the number is even, otherwise answer "no".';
+const task = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-  const genQuestionAndAnswer = () => {
-    const question = genNumber;
-    const rightAnswer = (question % 2 === 0) ? 'yes' : 'no';
-    return [question, rightAnswer];
-  };
-
-  runGame(task, genQuestionAndAnswer);
+const genQuestionAndAnswer = () => {
+  const question = genRandomNumber(1, 100);
+  const rightAnswer = (question % 2 === 0) ? 'yes' : 'no';
+  return [question, rightAnswer];
 };
 
-export default brainEven;
+export default () => runGame(task, genQuestionAndAnswer);

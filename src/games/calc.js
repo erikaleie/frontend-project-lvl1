@@ -1,39 +1,37 @@
 import runGame from '../index.js';
 import genNumber from '../utils.js';
 
-const brainCalc = () => {
-  const task = 'What is the result of the expression?';
+const task = 'What is the result of the expression?';
 
-  const genQuestionAndAnswer = () => {
-    const a = genNumber;
-    const b = Math.floor(Math.random() * 11);
-    const o = ['-', '+', '*'];
-    const oper = o[Math.floor(Math.random() * 3)];
+const genQuestionAndAnswer = () => {
+  const a = genNumber(1, 100);
+  const b = genNumber(1, 10);
+  const o = ['-', '+', '*'];
+  const oper = o[genNumber(0, 2)];
 
-    const question = `${a} ${oper} ${b}`;
+  const question = `${a} ${oper} ${b}`;
 
-    let res;
+  let res;
 
-    switch (oper) {
-      case '-':
-        res = a - b;
-        break;
+  switch (oper) {
+    case '-':
+      res = a - b;
+      break;
 
-      case '+':
-        res = a + b;
-        break;
+    case '+':
+      res = a + b;
+      break;
 
-      case '*':
-        res = a * b;
-        break;
+    case '*':
+      res = a * b;
+      break;
 
-      default:
-        break;
-    }
+    default:
+      break;
+  }
 
-    const rightAnswer = String(res);
-    return [question, rightAnswer];
-  };
-  runGame(task, genQuestionAndAnswer);
+  const rightAnswer = String(res);
+  return [question, rightAnswer];
 };
-export default brainCalc;
+
+export default () => runGame(task, genQuestionAndAnswer);
