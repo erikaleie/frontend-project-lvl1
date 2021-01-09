@@ -1,23 +1,25 @@
 import runGame from '../index.js';
 import genNumber from '../utils.js';
 
-const checkPrime = (question) => {
-  let rightAnswer = 'yes';
+const isPrime = (number) => {
+  if (number === 1) {
+    return false;
+  }
 
-  for (let j = 2; j < question; j += 1) {
-    if (question % j === 0) {
-      rightAnswer = 'no';
+  for (let j = 2; j < number; j += 1) {
+    if (number % j === 0) {
+      return false;
     }
   }
-  return rightAnswer;
+  return true;
 };
 
 const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const genQuestionAndAnswer = () => {
   const question = genNumber(1, 100);
-
-  return [question, checkPrime(question)];
+  const rightAnswer = isPrime(question) ? 'yes' : 'no';
+  return [question, rightAnswer];
 };
 
 export default () => runGame(task, genQuestionAndAnswer);
