@@ -1,29 +1,29 @@
 import runGame from '../index.js';
 import genNumber from '../utils.js';
 
-const genNod = (a, b) => {
-  let acc;
-  let x = a;
-  let y = b;
+const genGcd = (firstNumber, secondNumber) => {
+  let result;
+  let x = firstNumber;
+  let y = secondNumber;
   while (x !== 0 && y !== 0) {
     if (x > y) {
       x %= y;
     } else {
       y %= x;
     }
-    acc = x + y;
+    result = x + y;
   }
-  return acc;
+  return result;
 };
 
 const task = 'Find the greatest common divisor of given numbers.';
 
 const genQuestionAndAnswer = () => {
-  const a = genNumber(1, 100);
-  const b = genNumber(1, 100);
-  const question = `${a} ${b}`;
+  const firstNumber = genNumber(1, 100);
+  const secondNumber = genNumber(1, 100);
+  const question = `${firstNumber} ${secondNumber}`;
 
-  const rightAnswer = String(genNod(a, b));
+  const rightAnswer = String(genGcd(firstNumber, secondNumber));
   return [question, rightAnswer];
 };
 

@@ -4,29 +4,28 @@ import genNumber from '../utils.js';
 const task = 'What number is missing in the progression?';
 
 const genProgression = (start, step, size) => {
-  const arr = [start];
+  const progression = [];
 
-  for (let k = 1; k < size; k += 1) {
-    arr.push(start + k * step);
+  for (let k = 0; k < size; k += 1) {
+    progression.push(start + k * step);
   }
 
-  return arr;
+  return progression;
 };
 
 const genQuestionAndAnswer = () => {
   const start = genNumber(1, 100);
   const step = genNumber(1, 10);
   const size = 10;
-  const hiddenIndex = genNumber(0, 9);
+  const hiddenIndex = genNumber(0, size - 1);
 
-  const prog = genProgression(start, step, size);
+  const progression = genProgression(start, step, size);
 
-  const result = prog[hiddenIndex];
-  prog[hiddenIndex] = '..';
+  const rightAnswer = String(progression[hiddenIndex]);
 
-  const question = `${prog.join(' ')} `;
+  progression[hiddenIndex] = '..';
 
-  const rightAnswer = String(result);
+  const question = progression.join(' ');
 
   return [question, rightAnswer];
 };

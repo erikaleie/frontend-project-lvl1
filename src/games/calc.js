@@ -3,37 +3,37 @@ import genNumber from '../utils.js';
 
 const task = 'What is the result of the expression?';
 
-const calcExpression = (a, b, oper) => {
-  let res;
+const calcExpression = (leftOperand, rigthOperand, operation) => {
+  let result;
 
-  switch (oper) {
+  switch (operation) {
     case '-':
-      res = a - b;
+      result = leftOperand - rigthOperand;
       break;
 
     case '+':
-      res = a + b;
+      result = leftOperand + rigthOperand;
       break;
 
     case '*':
-      res = a * b;
+      result = leftOperand * rigthOperand;
       break;
 
     default:
       break;
   }
-  return res;
+  return result;
 };
 
 const genQuestionAndAnswer = () => {
-  const a = genNumber(1, 100);
-  const b = genNumber(1, 10);
-  const o = ['-', '+', '*'];
-  const oper = o[genNumber(0, 2)];
+  const leftOperand = genNumber(1, 100);
+  const rigthOperand = genNumber(1, 10);
+  const operations = ['-', '+', '*'];
+  const operation = operations[genNumber(0, operations.length - 1)];
 
-  const question = `${a} ${oper} ${b}`;
+  const question = `${leftOperand} ${operation} ${rigthOperand}`;
 
-  const rightAnswer = String(calcExpression(a, b, oper));
+  const rightAnswer = String(calcExpression(leftOperand, rigthOperand, operation));
   return [question, rightAnswer];
 };
 
